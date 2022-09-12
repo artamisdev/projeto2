@@ -7,6 +7,8 @@ import Profiles from "./pages/Profiles";
 import HomePage from "./pages/HomePage";
 import Profile from "./pages/Profile";
 
+
+
 function App() {
   return (
     <div className="App">
