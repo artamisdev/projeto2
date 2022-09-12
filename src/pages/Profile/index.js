@@ -1,12 +1,12 @@
 import NavBar from "../../components/NavBar";
+import axios from "axios";
 
 function Profile () {
+
     return (
-        <div>
-            <NavBar/>
-            <h1>USER PROFILE</h1>
-            
-        </div>
+        <>
+        
+        </>
     )
 }
 
