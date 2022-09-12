@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { Button, Form, Row, Col, Card } from "react-bootstrap";
 
 function Profiles() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({});
 
   const [search, setSearch] = useState("");
 
@@ -55,7 +55,7 @@ function Profiles() {
         </Col>
       </Row>
 
-      <Row className="d-flex justify-content-evenly mt-4">
+      {<Row className="d-flex justify-content-evenly mt-4">
         {user
           .filter((user) =>
             user.nome.toLowerCase().includes(search.toLowerCase())
@@ -78,16 +78,19 @@ function Profiles() {
                   <Card.Subtitle className="mb-2 text-muted">
                     {user.sexo}
                   </Card.Subtitle>
+                  <Card.Subtitle className="mb-2 text-muted">
+                    idade: {user.idade} anos
+                  </Card.Subtitle>
                 </Card.Body>
                 <Card.Footer className="bg-white">
-                  <Link to={`/students/${user._id}`}>
+                  <Link to={`/profile/${user._id}`}>
                     <Button variant="dark">Perfil Completo</Button>
                   </Link>
                 </Card.Footer>
               </Card>
             );
           })}
-      </Row>
+      </Row>}
     </div>
     </>
   );
