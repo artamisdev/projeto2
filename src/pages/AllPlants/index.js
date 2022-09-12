@@ -1,9 +1,12 @@
-function AllPlant() {
-    return ( 
-        <div>
+import NavBar from "../../components/NavBar";
 
-        </div>
-     );
+function AllPlants() {
+  return (
+    <>
+      <NavBar />
+      <h1>ALLPlants</h1>
+    </>
+  );
 }
 
-export default allPlant;
+export default AllPlants;
