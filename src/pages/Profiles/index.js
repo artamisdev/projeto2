@@ -1,9 +1,14 @@
 // PAGINA COM TODOS OS PERFIS DOS USERS E O FORM PARA CADASTRO
 import NavBar from "../../components/NavBar";
-import Profile from "../Profile";
+
 import { Link } from "react-router-dom";
 
 function Profiles() {
+
+
+ // https://ironrest.herokuapp.com/jungle-wd-85-profile 
+
+
   return (
     <>
       <NavBar />
