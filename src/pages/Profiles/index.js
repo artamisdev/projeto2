@@ -12,9 +12,10 @@ function Profiles() {
   return (
     <>
       <NavBar />
+      <p>apagar isso dps</p>
 
       <h1>PROFILES</h1>
-      <Link to="/user-profile" >Profile</Link>
+      <Link to="/user-profile">Profile</Link>
     </>
   );
 }
