@@ -7,10 +7,10 @@ import { useState, useEffect } from "react";
 import { Button, Form, Row, Col, Card } from "react-bootstrap";
 
 function Profiles() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState([]);
 
   const [search, setSearch] = useState("");
-
+  
   useEffect(() => {
     async function fetchPlanta() {
       try {
@@ -51,7 +51,7 @@ function Profiles() {
             <Button className="btn btn-light btn-outline-dark">
               Crie Perfil
             </Button>
-          </Link>
+          </Link >
         </Col>
       </Row>
 
@@ -71,7 +71,7 @@ function Profiles() {
                 }}>
                 <Card.Img
                   variant="top"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVfEJWjl2PyBQKuEoj64zfklCKW9PftoWcXQ&usqp=CAU"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAleGWcfnp1wvyvR-aR8GiCTw2EclHR1YpQA&usqp=CAU"
                 />
                 <Card.Body>
                   <Card.Title>{user.nome}</Card.Title>
