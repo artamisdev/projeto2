@@ -1,11 +1,25 @@
-import NavBar from "../../components/NavBar";
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { Form, Button } from "react-bootstrap";
+import {
+  Button,
+  Modal,
+  Form,
+  Accordion,
+  FloatingLabel,
+  Card,
+} from "react-bootstrap";
 
 function Profile() {
+  const { id } = useParams();
+
+  const [user, setUser] = useState({});
+  const [showForm, setShowForm] = useState(false);
+  const [reload, setReload] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
   const [form, setForm] = useState({
     nome: "",
     idade: "",
@@ -13,71 +27,56 @@ function Profile() {
     garden: "",
   });
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    async function fetchUser() {
+      setIsLoading(true);
+      try {
+        const response = await axios.get(
+          `https://ironrest.herokuapp.com/jungle-wd-85-profile/${id}`
+        );
 
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    try {
-      await axios.post(
-        "https://ironrest.herokuapp.com/jungle-wd-85-profile",
-        form
-      );
-      navigate("/profiles");
-    } catch (error) {
-      console.log(error);
+        setUser(response.data);
+        setForm(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
+    fetchUser();
+  }, [id, reload]);
+
+  console.log(user);
 
   return (
-    <div className="d-flex flex-column">
-      <h4 className="text-center">Crie seu perfil no nosso site</h4>
+    <div>
+      <div className="card d-flex flex-row shadow-md justify-content-between align-items-center">
+        <span className="m-2 fs-2 fw-semibold">{user.nome}</span>
+        <span>Signo: {user.sexo}</span>
+        <span>{user.idade} anos</span>
 
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label className="text-start text-muted fs-4 ">Nome</Form.Label>
-          <Form.Control
-            size="lg"
-            name="nome"
-            value={form.nome}
-            onChange={handleChange}
-          />
-        </Form.Group>
+        <Button
+          onClick={() => setShowForm(!showForm)}
+          className="btn btn-light btn-outline-dark btn-sm me-2">
+          Editar Perfil
+        </Button>
+      </div>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label className="fs-4 text-muted">Idade</Form.Label>
-          <Form.Control
-            size="lg"
-            name="idade"
-            value={form.idade}
-            onChange={handleChange}
-          />
-        </Form.Group>
+      {showForm === true && <></>}
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label className="fs-4 text-muted">Sexo</Form.Label>
-          <Form.Control
-            size="lg"
-            name="sexo"
-            value={form.sexo}
-            onChange={handleChange}
-          />
-        </Form.Group>
-
-        <div className="d-flex justify-content-center">
-          <Button
-            variant="success"
-            size="md"
-            type="submit"
-            style={{ width: "100px" }}>
-            Salvar
-          </Button>
+      {!isLoading && (
+        <div className="mt-3">
+          <Accordion>
+            <Accordion.Item eventKey="0">
+              <Accordion.Header>Minhas Anotações</Accordion.Header>
+              <Accordion.Body></Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="1">
+              <Accordion.Header>Minhas Perguntas</Accordion.Header>
+              <Accordion.Body></Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
         </div>
-      </Form>
+      )}
     </div>
   );
 }
