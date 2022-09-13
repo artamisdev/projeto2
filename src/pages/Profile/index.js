@@ -25,7 +25,7 @@ function Profile() {
     nome: "",
     idade: "",
     sexo: "",
-    garden: [],
+    garden:[]
   });
 
   useEffect(() => {
@@ -46,15 +46,9 @@ function Profile() {
     fetchUser();
   }, [id, reload]);
 
-
   console.log(user);
 
   return (
-  
-    <div>
-        <NavBar/>
-        <div className="d-flex flex-column">
-      <h4 className="text-center">Crie seu perfil no nosso site</h4>
     <div>
       <div className="card d-flex flex-row shadow-md justify-content-between align-items-center">
         <span className="m-2 fs-2 fw-semibold">{user.nome}</span>
@@ -93,11 +87,7 @@ function Profile() {
             </Accordion.Item>
           </Accordion>
         </div>
-
       )}
-
-      </Form>
-      </div>
     </div>
   );
 }

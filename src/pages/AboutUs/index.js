@@ -4,7 +4,6 @@ import NavBar from "../../components/NavBar";
 function AboutUs() {
   return (
     <>
-      <NavBar />
       <h1>ABOUT US</h1>
     </>
   );

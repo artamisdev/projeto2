@@ -4,7 +4,7 @@ import NavBar from "../../components/NavBar";
 function Quizz() {
   return (
     <div>
-      <NavBar />
+      
       <h1>QUIZZ</h1>
     </div>
   );

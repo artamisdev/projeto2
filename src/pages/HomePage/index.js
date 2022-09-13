@@ -34,7 +34,7 @@ function HomePage() {
         </p>
 
 
-        <Link to="/user-profile">
+        <Link to="/create-profile">
           <button className="inicio">Crie seu perfil</button>
         </Link>
       </div>
