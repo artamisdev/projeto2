@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import EditUser from "../../components/EditUser";
 
 import {
   Button,
@@ -24,7 +25,7 @@ function Profile() {
     nome: "",
     idade: "",
     sexo: "",
-    garden: "",
+    garden: [],
   });
 
   useEffect(() => {
@@ -61,7 +62,17 @@ function Profile() {
         </Button>
       </div>
 
-      {showForm === true && <></>}
+      {showForm === true && (
+        <EditUser
+          form={form}
+          id={id}
+          setShowForm={setShowForm}
+          setForm={setForm}
+          reload={reload}
+          setReload={setReload}
+          showForm={showForm}
+        />
+      )}
 
       {!isLoading && (
         <div className="mt-3">

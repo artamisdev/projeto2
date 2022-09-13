@@ -41,11 +41,13 @@ function EditUser({
         `https://ironrest.herokuapp.com/jungle-wd-85-profile/${id}`
       );
 
-      navigate("/");
+      navigate("/profiles");
     } catch (error) {
       console.log(error);
     }
   }
+
+  console.log(id);
 
   return (
     <Modal show={showForm} onHide={() => setShowForm(false)}>
@@ -58,9 +60,13 @@ function EditUser({
           <Form.Control name="nome" value={form.nome} onChange={handleChange} />
 
           <Form.Label>Idade</Form.Label>
-          <Form.Control name="idade" value={form.idade} onChange={handleChange} />
+          <Form.Control
+            name="idade"
+            value={form.idade}
+            onChange={handleChange}
+          />
 
-        {/*   <Form.Label>Signo</Form.Label>
+          {/*   <Form.Label>Signo</Form.Label>
           <Form.Control name="sexo" value={form.sexo} onChange={handleChange} /> */}
 
           <Form.Label>Tipo</Form.Label>
@@ -68,9 +74,9 @@ function EditUser({
             name="sexo"
             onChange={handleChange}
             defaultValue={form.sexo}>
-            <option value="professor">Professor</option>
-            <option value="aluno">Aluno</option>
-            <option value="ta">Ta</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
           </Form.Select>
         </Form>
       </Modal.Body>
