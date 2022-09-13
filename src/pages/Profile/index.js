@@ -95,8 +95,8 @@ function Profile() {
         </div>
 
       )}
-
-      </Form>
+     <Form>
+    
       </div>
     </div>
   );

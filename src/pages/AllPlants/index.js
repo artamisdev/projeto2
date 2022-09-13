@@ -77,7 +77,7 @@ function AllPlants() {
                     src={plant.Imagens}
                    style={{ width: "17,5rem"}}
                   />
-                  <Card.Title>{plant.nomePolular}</Card.Title>
+                  <Card.Title>{plant.nomePopular}</Card.Title>
 
                   <Card.Body>
                     <Card.Subtitle>{plant.nomeCientifico}</Card.Subtitle>
