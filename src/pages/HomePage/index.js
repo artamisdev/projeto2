@@ -8,7 +8,7 @@ function HomePage() {
     <div>
       <h1>HOMEPAGE</h1>
 
-      <Link to="/user-profile">
+      <Link to="/create-profile">
         <Button className="btn btn-light btn-outline-dark">
           Crie seu perfil
         </Button>

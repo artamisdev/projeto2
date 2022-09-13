@@ -75,7 +75,7 @@ function Profiles() {
                       </Card.Subtitle>
                     </Card.Body>
                     <Card.Footer className="bg-white">
-                      <Link to={`/profile/${user._id}`}>
+                      <Link to={`/user-profile/${user._id}`}>
                         <Button variant="dark">Perfil Completo</Button>
                       </Link>
                     </Card.Footer>
