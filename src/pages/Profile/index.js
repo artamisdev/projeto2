@@ -34,7 +34,10 @@ function Profile() {
   }
 
   return (
-    <div className="d-flex flex-column">
+  
+    <div>
+        <NavBar/>
+        <div className="d-flex flex-column">
       <h4 className="text-center">Crie seu perfil no nosso site</h4>
 
       <Form onSubmit={handleSubmit}>
@@ -78,6 +81,7 @@ function Profile() {
           </Button>
         </div>
       </Form>
+      </div>
     </div>
   );
 }
