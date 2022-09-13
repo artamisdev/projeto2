@@ -10,7 +10,7 @@ function Profiles() {
   const [user, setUser] = useState([]);
 
   const [search, setSearch] = useState("");
-
+  
   useEffect(() => {
     async function fetchPlanta() {
       try {
@@ -43,7 +43,6 @@ function Profiles() {
               placeholder="Procure um companheiro jardineiro"
             />
           </Col>
-
           <Col>
             <Link to="/user-profile">
               <Button className="btn btn-light btn-outline-dark">
