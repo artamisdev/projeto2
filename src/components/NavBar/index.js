@@ -12,7 +12,11 @@ function NavBar() {
 
         <Link to="/allplants">AllPlants</Link>
 
+        <Link to="/quizz">Quizz</Link>
+
         <Link to="/about">AboutUs</Link>
+
+      
       </nav>
     </div>
   );

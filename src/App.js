@@ -6,7 +6,7 @@ import Quizz from "./pages/Quizz";
 import Profiles from "./pages/Profiles";
 import HomePage from "./pages/HomePage";
 import Profile from "./pages/Profile";
-
+import CreateProfile from "./pages/CreateProfile";
 
 
 function App() {
@@ -18,7 +18,8 @@ function App() {
         <Route path="/allplants" element={<AllPlants />} />
         <Route path="/quizz" element={<Quizz />} />
         <Route path="/profiles" element={<Profiles />} />
-        <Route path="/user-profile" element={<Profile />} />
+        <Route path="/user-profile/:id" element={<Profile />} />
+        <Route path="/create-profile" element={<CreateProfile />} />
       </Routes>
     </div>
   );

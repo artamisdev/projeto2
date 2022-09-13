@@ -33,10 +33,12 @@ function HomePage() {
           ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales.
         </p>
 
+
         <Link to="/user-profile">
           <button className="inicio">Crie seu perfil</button>
         </Link>
       </div>
+
     </div>
   );
 }

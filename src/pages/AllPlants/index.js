@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Form, Col, Card } from "react-bootstrap";
 import { Link } from "react";
+import ListGroup from "react-bootstrap/ListGroup";
 
 function AllPlants() {
   const [allPlants, setAllPlants] = useState([{ nomePopular: "" }]);
@@ -10,9 +11,8 @@ function AllPlants() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-   
     async function fetchPlants() {
-       setIsLoading(true);
+      setIsLoading(true);
       try {
         const response = await axios.get(
           `https://ironrest.herokuapp.com/jungle-wd-85`
@@ -30,11 +30,18 @@ function AllPlants() {
   function handleSearch(e) {
     setSearch(e.target.value);
   }
-  console.log(allPlants);
+
+
+  // // const shortInfo = allPlants[0].info.slice(0,80)
+
+  // const fullInfo = allPlants[0].info
+
+
+
   return (
     <>
       {!isLoading && (
-        <>
+        <div>
           <NavBar />
           <h1>ALLPlants</h1>
 
@@ -45,42 +52,52 @@ function AllPlants() {
               placeholder="Encontre a sua planta"
             />
           </Col>
-
+        <div style={{display: "flex",
+                     flexWrap: "wrap",
+                    flexDirection: "row",
+                    justifyContent:"space-evenly"}}>
           {allPlants
-
-            // .filter((plant) => plant.nomePopular.includes(search))
 
             .map((plant) => {
               return (
+
+              
                 <Card
                   key={plant._id}
                   style={{
                     width: "18rem",
                     margin: "20px",
                     alignItems: "center",
-                    border: "solid black 2px",
+                    border: "solid black 2px"
+                    
                   }}
                 >
                   <Card.Img
                     variant="top"
-                    src="https://images.tcdn.com.br/img/img_prod/674984/muda_de_zamioculca_planta_da_fortuna_media_33878507_3_a097fb0409694b8830646af95ba84d30.jpg"
-                    style={{ width: "10rem" }}
+                    src={plant.Imagens}
+                   style={{ width: "17,5rem"}}
                   />
+                  <Card.Title>{plant.nomePolular}</Card.Title>
 
                   <Card.Body>
-                    <Card.Title>{plant.nomePopular}</Card.Title>
                     <Card.Subtitle>{plant.nomeCientifico}</Card.Subtitle>
 
-                    <p>Origem: {plant.origem}</p>
-                    <p>Cuidado: {plant.cuidado}</p>
-                    <p>Luminosidade: {plant.luminosidade}</p>
-
-                    <Card.Text>{plant.info}</Card.Text>
+                    <ListGroup className="list-group-flush">
+                      <ListGroup.Item> Origem: {plant.origem}</ListGroup.Item>
+                      <ListGroup.Item> Cuidado: {plant.cuidado}</ListGroup.Item>
+                      <ListGroup.Item>
+                        {" "}
+                        Luminosidade: {plant.luminosidade}
+                      </ListGroup.Item>
+                      
+                      <ListGroup.Item>{plant.info.slice(0,60)}</ListGroup.Item>
+                    </ListGroup>
                   </Card.Body>
                 </Card>
               );
             })}
-        </>
+            </div>
+        </div>
       )}
     </>
   );

@@ -43,13 +43,6 @@ function Profiles() {
               placeholder="Procure um companheiro jardineiro"
             />
           </Col>
-          <Col>
-            <Link to="/user-profile">
-              <Button className="btn btn-light btn-outline-dark">
-                Crie Perfil
-              </Button>
-            </Link>
-          </Col>
         </Row>
 
         {
@@ -82,7 +75,7 @@ function Profiles() {
                       </Card.Subtitle>
                     </Card.Body>
                     <Card.Footer className="bg-white">
-                      <Link to={`/profile/${user._id}`}>
+                      <Link to={`/user-profile/${user._id}`}>
                         <Button variant="dark">Perfil Completo</Button>
                       </Link>
                     </Card.Footer>
