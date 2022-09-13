@@ -33,7 +33,6 @@ function Profile() {
     }
   }
 
-  console.log(form);
   return (
     <div className="d-flex flex-column">
       <h4 className="text-center">Crie seu perfil no nosso site</h4>
@@ -43,7 +42,7 @@ function Profile() {
           <Form.Label className="text-start text-muted fs-4 ">Nome</Form.Label>
           <Form.Control
             size="lg"
-            name="name"
+            name="nome"
             value={form.nome}
             onChange={handleChange}
           />
@@ -53,7 +52,7 @@ function Profile() {
           <Form.Label className="fs-4 text-muted">Idade</Form.Label>
           <Form.Control
             size="lg"
-            name="age"
+            name="idade"
             value={form.idade}
             onChange={handleChange}
           />
@@ -63,7 +62,7 @@ function Profile() {
           <Form.Label className="fs-4 text-muted">Sexo</Form.Label>
           <Form.Control
             size="lg"
-            name="sign"
+            name="sexo"
             value={form.sexo}
             onChange={handleChange}
           />
