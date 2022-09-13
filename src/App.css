@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Lato:wght@300&display=swap');
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.homePageHero {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url("./assets/MobileIlustração.png");
+  background-size: cover;
+  text-align: left;
+  margin-top: 0px;
+}
+
+.inicio {
+  background-color: #7c6053;
+  color: whitesmoke;
+  padding: 9px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 12px;
+  border-color: #7c6053;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  width: 30vw;
+}
+
+.txtInicio {
+    font-size: 14px; 
+    margin: 25px;
+    text-align: justify;
+    font-family: 'Lato', sans-serif;
+    color: whitesmoke;
+    font-weight: 600;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 33vh;
 }
