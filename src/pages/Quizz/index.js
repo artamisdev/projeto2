@@ -38,7 +38,11 @@ function Quizz({ cuidado, setCuidado, luminosidade, setLuminosidade, id }) {
 
   console.log(allquestions)
 
-  function handleSubmitQuiz(){
+  function handleSubmitQuiz(
+
+    
+
+  ){
 
 
   }

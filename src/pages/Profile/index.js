@@ -88,7 +88,7 @@ function Profile() {
               <Accordion.Header>Meu Jardim</Accordion.Header>
               <Accordion.Body>
                 {
-                  user.garden
+                  setUser.garden
                 }
               </Accordion.Body>
             </Accordion.Item>
