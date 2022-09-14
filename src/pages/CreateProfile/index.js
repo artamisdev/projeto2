@@ -8,7 +8,7 @@ function CreateProfile() {
   const [form, setForm] = useState({
     nome: "",
     idade: "",
-    sexo: "",
+    moradia: "",
     garden: "",
   });
 
@@ -33,7 +33,6 @@ function CreateProfile() {
   }
 
   return (
-    
     <div className="d-flex flex-column">
       <h4 className="text-center">Crie seu perfil no nosso site</h4>
 
@@ -59,13 +58,16 @@ function CreateProfile() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label className="fs-4 text-muted">Sexo</Form.Label>
-          <Form.Control
-            size="lg"
-            name="sexo"
-            value={form.sexo}
+          <Form.Label className="fs-4 text-muted">Moradia</Form.Label>
+          <Form.Select
+            className="fs-5 text-muted"
+            name="moradia"
             onChange={handleChange}
-          />
+            defaultValue={form.moradia}>
+            <option value="Apartamento">Apartamento</option>
+            <option value="Casa">Casa</option>
+            <option value="Sítio">Sítio</option>
+          </Form.Select>
         </Form.Group>
 
         <div className="d-flex justify-content-center">
