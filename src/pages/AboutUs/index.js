@@ -6,6 +6,8 @@ function AboutUs() {
     <>
       <NavBar />
       <h1>ABOUT US</h1>
+      
+      <footer></footer>
     </>
   );
 }

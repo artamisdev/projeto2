@@ -50,9 +50,7 @@ function Profile() {
   console.log(user);
 
   return (
-  
-    <div>
-        <NavBar/>
+
         <div className="d-flex flex-column">
       <h4 className="text-center">Crie seu perfil no nosso site</h4>
     <div>
@@ -95,9 +93,7 @@ function Profile() {
         </div>
 
       )}
-     <Form>
-    
-      </div>
+
     </div>
   );
 }
