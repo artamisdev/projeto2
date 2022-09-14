@@ -36,11 +36,21 @@ function Quizz({ cuidado, setCuidado, luminosidade, setLuminosidade, id }) {
     allquestions[index].res = e.target.value;
   }
 
-  console.log(allquestions)
+  console.log(allquestions);
 
-  function handleSubmitQuiz(){
+  function handleSubmitQuiz() {
+    // pegar os valores das res, fazer a média
 
+    const avgCare = Math.round(
+      (+allquestions[0].res + +allquestions[1].res + +allquestions[2].res) / 3
+    );
 
+    const avgLum = Math.round(
+      (+allquestions[3].res + +allquestions[4].res + +allquestions[5].res) / 3
+    );
+
+    console.log( avgCare, avgLum);
+    
   }
 
   return (
