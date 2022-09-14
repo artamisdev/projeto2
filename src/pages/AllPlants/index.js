@@ -1,14 +1,13 @@
-import NavBar from "../../components/NavBar";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Form, Col, Card } from "react-bootstrap";
-import { Link } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
 function AllPlants() {
   const [allPlants, setAllPlants] = useState([{ nomePopular: "" }]);
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [plantsFilter, setPlantsFilter] = useState([{ nomePopular: "" }]);
 
   useEffect(() => {
     async function fetchPlants() {
@@ -19,6 +18,7 @@ function AllPlants() {
         );
 
         setAllPlants(response.data);
+        setPlantsFilter(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -29,14 +29,13 @@ function AllPlants() {
 
   function handleSearch(e) {
     setSearch(e.target.value);
+
+    const plantsFiltered = allPlants.filter((plant) => {
+      return plant.nomePopular.toLowerCase().startsWith(e.target.value.toLowerCase());
+    });
+
+    setPlantsFilter(plantsFiltered)
   }
-
-
-  // // const shortInfo = allPlants[0].info.slice(0,80)
-
-  // const fullInfo = allPlants[0].info
-
-
 
   return (
     <>
@@ -51,32 +50,31 @@ function AllPlants() {
               placeholder="Encontre a sua planta"
             />
           </Col>
-        <div style={{display: "flex",
-                     flexWrap: "wrap",
-                    flexDirection: "row",
-                    justifyContent:"space-evenly"}}>
-          {allPlants
-
-            .map((plant) => {
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+            }}
+          >
+            {plantsFilter.map((plant) => {
               return (
-
-              
                 <Card
                   key={plant._id}
                   style={{
                     width: "18rem",
                     margin: "20px",
                     alignItems: "center",
-                    border: "solid black 2px"
-                    
+                    border: "solid black 2px",
                   }}
                 >
                   <Card.Img
                     variant="top"
                     src={plant.Imagens}
-                   style={{ width: "17,5rem"}}
+                    style={{ width: "17,5rem" }}
                   />
-                  <Card.Title>{plant.nomePolular}</Card.Title>
+                  <Card.Title>{plant.nomePopular}</Card.Title>
 
                   <Card.Body>
                     <Card.Subtitle>{plant.nomeCientifico}</Card.Subtitle>
@@ -88,14 +86,15 @@ function AllPlants() {
                         {" "}
                         Luminosidade: {plant.luminosidade}
                       </ListGroup.Item>
-                      
-                      <ListGroup.Item>{plant.info.slice(0,60)}</ListGroup.Item>
+
+                      <ListGroup.Item>{plant.info.slice(0, 60)}</ListGroup.Item>
+                      <button>ENVIAR PARA O PERFIL DO USUÁRIO</button>
                     </ListGroup>
                   </Card.Body>
                 </Card>
               );
             })}
-            </div>
+          </div>
         </div>
       )}
     </>
