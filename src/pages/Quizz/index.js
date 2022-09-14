@@ -1,39 +1,68 @@
 // QUIZZ - 5 PERGUNTAS COM OPCOES DE RESPOSTAS DE 1 À 5 PARA MOSTRAR AS PLANTAS QUE SE ENCAIXAM MELHOR COM O USUARIO
 import { useState } from "react";
 
-function Quizz() {
+function Quizz({ cuidado, setCuidado, luminosidade, setLuminosidade, id }) {
   const allquestions = [
     {
       pergunta: "Você possui plantas em casa?",
+      res: "",
     },
     {
       pergunta: "Com que frequencia você cuida das suas plantas?",
+      res: "",
     },
     {
       pergunta: "Com que frequência você rega as suas plantas?",
+      res: "",
     },
     {
       pergunta: "Normalmente, qual a temperatura da sua casa?",
+      res: "",
     },
     {
       pergunta: "O quanto a sua casa é arejada?",
+      res: "",
     },
     {
       pergunta: "De 0 a 5, quanta luminosidade tem na sua casa?",
+      res: "",
     },
   ];
 
+  function handleRange(e, index) {
+    console.log(e.target.value);
+    console.log(index);
+
+    allquestions[index].res = e.target.value;
+  }
+
+  console.log(allquestions)
+
+  function handleSubmitQuiz(){
+
+
+  }
+
   return (
     <div>
-      {allquestions.map((element) => {
+      {allquestions.map((element, index) => {
         return (
-          <div>
+          <div key={element.pergunta}>
             <p>{element.pergunta}</p>
-
-            <spam>Pouco</spam> <input type="range" min={1} max={5} step={1} defaultValue={1} /> <spam>Muito</spam>
+            <span>Pouco</span>{" "}
+            <input
+              type="range"
+              onChange={(e) => handleRange(e, index)}
+              min={1}
+              max={5}
+              step={1}
+              defaultValue={1}
+            />{" "}
+            <span>Muito</span>
           </div>
         );
       })}
+      <button onClick={handleSubmitQuiz}>Finalizar quizz</button>
     </div>
   );
 }

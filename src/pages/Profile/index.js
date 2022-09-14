@@ -24,8 +24,8 @@ function Profile() {
   const [isLoading, setIsLoading] = useState(true);
 
   //states das perguntas
-  const [luminosidade,setLuminosidade] = useState([])
-  const [cuidado, setCuidado] = useState([])
+  const [luminosidade,setLuminosidade] = useState(0)
+  const [cuidado, setCuidado] = useState(0)
 
 
   const [form, setForm] = useState({
