@@ -23,6 +23,11 @@ function Profile() {
   const [reload, setReload] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  //states das perguntas
+  const [luminosidade,setLuminosidade] = useState([])
+  const [cuidado, setCuidado] = useState([])
+
+
   const [form, setForm] = useState({
     nome: "",
     idade: "",
@@ -82,7 +87,9 @@ function Profile() {
             <Accordion.Item eventKey="0">
               <Accordion.Header>Meu Jardim</Accordion.Header>
               <Accordion.Body>
-                <h1>Map de user.garden</h1>
+                {
+                  user.garden
+                }
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1">
@@ -94,7 +101,13 @@ function Profile() {
             <Accordion.Item eventKey="2">
               <Accordion.Header>Quizz de Plantas</Accordion.Header>
               <Accordion.Body>
-                <Quizz />
+                <Quizz 
+                luminosidade={luminosidade}
+                cuidado={cuidado}
+                setCuidado={setCuidado}
+                setLuminosidade={setLuminosidade}
+                id={id}
+                />
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
