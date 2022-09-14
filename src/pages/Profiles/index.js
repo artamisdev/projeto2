@@ -10,7 +10,7 @@ function Profiles() {
   const [user, setUser] = useState([]);
 
   const [search, setSearch] = useState("");
-  
+
   useEffect(() => {
     async function fetchPlanta() {
       try {
@@ -32,15 +32,36 @@ function Profiles() {
 
   return (
     <>
-      <div>
-        <Row>
-          <Col className="col-10">
+      <div className="profilesPageMain">
+        <p className="profilesSub">Perfis</p>
+        <Row
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Col
+            className="col-10"
+            style={{
+              width: "90%",
+              marginTop: "230px",
+            }}
+          >
             <Form.Control
+              style={{
+                borderRadius: "14px",
+                paddingLeft: "20px",
+                color: "#E3E3E3",
+              }}
               value={search}
               onChange={handleSearch}
               placeholder="Procure um companheiro jardineiro"
             />
           </Col>
+          <Link to="/create-profile">
+            <button className="profilesCrie">Crie seu perfil</button>
+          </Link>
         </Row>
 
         {
@@ -64,18 +85,25 @@ function Profiles() {
                       src="https://thumbor.cartpanda.com/4zmdTFchn7WoN3E5SkWqW481nwc=/600x0/https://assets.mycartpanda.com/static/products_images/dDGNEXKGrqaRiJ3n84bwzyW9CFIz0d.jpg"
                     />
                     <Card.Body>
-                      <Card.Title>{user.nome}</Card.Title>
+                      <p className="card-title profilesCardTitle">
+                      {user.nome}
+                      </p>
+
                       <Card.Subtitle className="mb-2 text-muted">
-                        Moradia: {user.moradia}
+                        <strong>Moradia:</strong> {user.moradia}
                       </Card.Subtitle>
+
                       <Card.Subtitle className="mb-2 text-muted">
-                        idade: {user.idade} anos
+                        <strong>Idade:</strong> {user.idade} anos
                       </Card.Subtitle>
                     </Card.Body>
+
                     <Card.Footer className="bg-white">
+
                       <Link to={`/user-profile/${user._id}`}>
                         <Button variant="dark">Perfil Completo</Button>
                       </Link>
+
                     </Card.Footer>
                   </Card>
                 );

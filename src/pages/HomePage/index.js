@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
-    <div className="homePageHero"
-    >
-      <div className="body">
-        <p className="txtInicio">
+    <div className="homePageHero">
+      <div className="homeBody">
+        <p className="homeTxtInicio">
           Lorem impsum dolor sit amet, consectetur adipiscing elit. Ut et massa
           mi. Aliquam in hendrerit urna. Peilentesque sit amet sapien fringilla,
           mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
@@ -17,7 +16,7 @@ function HomePage() {
 
 
         <Link to="/create-profile">
-          <button className="inicio">Crie seu perfil</button>
+          <button className="homeInicio">Crie seu perfil</button>
         </Link>
       </div>
 
