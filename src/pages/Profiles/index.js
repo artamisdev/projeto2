@@ -32,7 +32,7 @@ function Profiles() {
 
   return (
     <>
-      <NavBar />
+
 
       <div>
         <Row>

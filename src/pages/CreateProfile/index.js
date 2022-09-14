@@ -33,6 +33,7 @@ function CreateProfile() {
   }
 
   return (
+    
     <div className="d-flex flex-column">
       <h4 className="text-center">Crie seu perfil no nosso site</h4>
 
