@@ -12,6 +12,8 @@ import {
   FloatingLabel,
   Card,
 } from "react-bootstrap";
+import AllPlants from "../AllPlants";
+import Quizz from "../Quizz";
 
 function Profile() {
   const { id } = useParams();
@@ -25,7 +27,7 @@ function Profile() {
     nome: "",
     idade: "",
     moradia: "",
-    garden:[]
+    garden: [],
   });
 
   useEffect(() => {
@@ -78,12 +80,22 @@ function Profile() {
         <div className="mt-3">
           <Accordion>
             <Accordion.Item eventKey="0">
-              <Accordion.Header>Minhas Anotações</Accordion.Header>
-              <Accordion.Body></Accordion.Body>
+              <Accordion.Header>Meu Jardim</Accordion.Header>
+              <Accordion.Body>
+                <h1>Map de user.garden</h1>
+              </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1">
-              <Accordion.Header>Minhas Perguntas</Accordion.Header>
-              <Accordion.Body></Accordion.Body>
+              <Accordion.Header>Todas as Plantas</Accordion.Header>
+              <Accordion.Body>
+                <AllPlants />
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="2">
+              <Accordion.Header>Quizz de Plantas</Accordion.Header>
+              <Accordion.Body>
+                <Quizz />
+              </Accordion.Body>
             </Accordion.Item>
           </Accordion>
         </div>

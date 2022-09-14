@@ -9,7 +9,7 @@ function CreateProfile() {
     nome: "",
     idade: "",
     moradia: "",
-    garden: "",
+    garden: [],
   });
 
   const navigate = useNavigate();
