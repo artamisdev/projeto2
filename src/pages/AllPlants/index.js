@@ -42,7 +42,6 @@ function AllPlants() {
     <>
       {!isLoading && (
         <div>
-          <NavBar />
           <h1>ALLPlants</h1>
 
           <Col className="col-10">

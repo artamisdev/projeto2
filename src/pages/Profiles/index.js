@@ -32,8 +32,6 @@ function Profiles() {
 
   return (
     <>
-
-
       <div>
         <Row>
           <Col className="col-10">
