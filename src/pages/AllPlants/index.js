@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Form, Col, Card } from "react-bootstrap";
-import { Link } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
 function AllPlants() {
@@ -89,6 +88,7 @@ function AllPlants() {
                       </ListGroup.Item>
 
                       <ListGroup.Item>{plant.info.slice(0, 60)}</ListGroup.Item>
+                      <button>ENVIAR PARA O PERFIL DO USUÁRIO</button>
                     </ListGroup>
                   </Card.Body>
                 </Card>
