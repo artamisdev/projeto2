@@ -24,7 +24,7 @@ function Profile() {
   const [form, setForm] = useState({
     nome: "",
     idade: "",
-    sexo: "",
+    moradia: "",
     garden:[]
   });
 
@@ -52,7 +52,7 @@ function Profile() {
     <div>
       <div className="card d-flex flex-row shadow-md justify-content-between align-items-center">
         <span className="m-2 fs-2 fw-semibold">{user.nome}</span>
-        <span>Signo: {user.sexo}</span>
+        <span>Moradia: {user.moradia}</span>
         <span>{user.idade} anos</span>
 
         <Button

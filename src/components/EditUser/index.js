@@ -67,16 +67,16 @@ function EditUser({
           />
 
           {/*   <Form.Label>Signo</Form.Label>
-          <Form.Control name="sexo" value={form.sexo} onChange={handleChange} /> */}
+          <Form.Control name="moradia" value={form.moradia} onChange={handleChange} /> */}
 
-          <Form.Label>Tipo</Form.Label>
+          <Form.Label>Moradia</Form.Label>
           <Form.Select
-            name="sexo"
+            name="moradia"
             onChange={handleChange}
-            defaultValue={form.sexo}>
-            <option value="masculino">Masculino</option>
-            <option value="feminino">Feminino</option>
-            <option value="outro">Outro</option>
+            defaultValue={form.moradia}>
+            <option value="Apartamento">Apartamento</option>
+            <option value="Casa">Casa</option>
+            <option value="Sítio">Sítio</option>
           </Form.Select>
         </Form>
       </Modal.Body>

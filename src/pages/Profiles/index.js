@@ -66,7 +66,7 @@ function Profiles() {
                     <Card.Body>
                       <Card.Title>{user.nome}</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">
-                        {user.sexo}
+                        Moradia: {user.moradia}
                       </Card.Subtitle>
                       <Card.Subtitle className="mb-2 text-muted">
                         idade: {user.idade} anos
