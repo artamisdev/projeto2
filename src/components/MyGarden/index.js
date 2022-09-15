@@ -66,10 +66,10 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
           );
         })}
       </div>
-
-
+      
+      )}; 
     </>
-  );
+  )
 }
 
 export default MyGarden;
