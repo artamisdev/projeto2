@@ -49,7 +49,7 @@
   margin-top: 0px;
 }
 
-.inicio {
+.homeInicio {
   background-color: #7c6053;
   color: whitesmoke;
   padding: 9px;
@@ -63,7 +63,7 @@
   width: 30vw;
 }
 
-.txtInicio {
+.homeTxtInicio {
   font-size: 14px;
   margin: 25px;
   margin-top: 280px;
@@ -73,7 +73,7 @@
   font-weight: 600;
 }
 
-.body {
+.homeBody {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,4 +90,44 @@
 .dropdown > button:hover {
   border-color: rgba(0, 0, 0, 0) !important;
   color: rgba(0, 0, 0, 0) !important;
+}
+
+.profilesPageMain {
+  background-image: url("./assets/04\ -\ Perfis\ teste02.png");
+  background-size: cover;
+}
+
+.profilesSub {
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+  color: #7c6053;
+  font-weight: 900;
+  text-align: left;
+  margin-left: 25px;
+}
+
+.profilesCrie {
+  background-color: #7c6053;
+  color: whitesmoke;
+  margin-top: 30px;
+  padding: 9px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 12px;
+  border-color: #EDDDD6;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  width: 30vw;
+}
+
+
+.h5 {
+  font-size: 18px !important;
+  color: #2B2B2B !important;
+}
+
+.h6 {
+  font-size: 14px !important;
+  color: #2B2B2B !important;
 }
