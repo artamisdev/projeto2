@@ -13,7 +13,7 @@ function MyGarden({ user, id, reload, setReload }) {
 
     clone.garden.splice(index,1)
     
-    await axios.post(
+    await axios.put(
         `https://ironrest.herokuapp.com/jungle-wd-85-profile/${id}`,
         clone
       );
@@ -60,7 +60,7 @@ function MyGarden({ user, id, reload, setReload }) {
                   </ListGroup>
                 </Card.Body>
                 <Card.Footer>
-                  <button onClick={() => handleDeletePlant(index)}>
+                  <button onClick={(e) => handleDeletePlant(e, index)}>
                     RETIRAR DO MEU JARDIM
                   </button>
                 </Card.Footer>
