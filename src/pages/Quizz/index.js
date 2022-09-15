@@ -19,39 +19,40 @@ function Quizz({
   const allquestions = [
     {
       pergunta: "Você possui plantas em casa?",
-      min:"Nenhuma",
-      max:"Algumas",
-      res: ""
+      min: "Nenhuma",
+      max: "Algumas",
+      res: "",
     },
     {
       pergunta: "Você cuida das suas plantas?",
-      min:"Quase nunca",
-      max:"Frequentemente",
-      res: ""
+      min: "Quase nunca",
+      max: "Frequentemente",
+      res: "",
     },
     {
       pergunta: "Com que frequência você rega as suas plantas?",
-      min:"Pouca",
-      max:"Muita",
-      res: ""
+      min: "Pouca",
+      max: "Muita",
+      res: "",
     },
     {
       pergunta: "Normalmente, como é o clima do ambiente?",
-      min:"Frio",
-      max:"Quente",
-      res: ""
+      min: "Frio",
+      max: "Quente",
+      res: "",
     },
     {
       pergunta: "O quanto a sua casa é arejada?",
-      min:"Pouco",
-      max:"Muito",
-      res: ""
+      min: "Pouco",
+      max: "Muito",
+      res: "",
     },
     {
-      pergunta: "De 0 a 5, qual nota você dá para a luminosidade tem na sua casa?",
-      min:"0",
-      max:"5",
-      res: ""
+      pergunta:
+        "De 0 a 5, qual nota você dá para a luminosidade tem na sua casa?",
+      min: "0",
+      max: "5",
+      res: "",
     },
   ];
 
@@ -103,7 +104,6 @@ function Quizz({
     );
 
     //enviar o clone para a API. como PUT
-    //setReload(!reload)
   }
 
   return (
