@@ -4,33 +4,54 @@ import axios from "axios";
 import { Card } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 
-function Quizz({ cuidado, setCuidado, luminosidade, setLuminosidade, id }) {
+function Quizz({
+  cuidado,
+  setCuidado,
+  luminosidade,
+  setLuminosidade,
+  id,
+  user,
+  reload,
+  setReload,
+}) {
   const [resultQuizz, setResultQuizz] = useState([]);
 
   const allquestions = [
     {
       pergunta: "Você possui plantas em casa?",
-      res: "",
+      min:"Nenhuma",
+      max:"Algumas",
+      res: ""
     },
     {
-      pergunta: "Com que frequencia você cuida das suas plantas?",
-      res: "",
+      pergunta: "Você cuida das suas plantas?",
+      min:"Quase nunca",
+      max:"Frequentemente",
+      res: ""
     },
     {
       pergunta: "Com que frequência você rega as suas plantas?",
-      res: "",
+      min:"Pouca",
+      max:"Muita",
+      res: ""
     },
     {
-      pergunta: "Normalmente, qual a temperatura da sua casa?",
-      res: "",
+      pergunta: "Normalmente, como é o clima do ambiente?",
+      min:"Frio",
+      max:"Quente",
+      res: ""
     },
     {
       pergunta: "O quanto a sua casa é arejada?",
-      res: "",
+      min:"Pouco",
+      max:"Muito",
+      res: ""
     },
     {
-      pergunta: "De 0 a 5, quanta luminosidade tem na sua casa?",
-      res: "",
+      pergunta: "De 0 a 5, qual nota você dá para a luminosidade tem na sua casa?",
+      min:"0",
+      max:"5",
+      res: ""
     },
   ];
 
@@ -70,13 +91,28 @@ function Quizz({ cuidado, setCuidado, luminosidade, setLuminosidade, id }) {
     setResultQuizz(filteredArray);
   }
 
+  async function handleAddGarden(e, plant) {
+    e.preventDefault();
+    const clone = { ...user };
+    clone.garden.push(plant); //planta adicionada na array de garden
+    delete clone._id;
+
+    await axios.put(
+      `https://ironrest.herokuapp.com/jungle-wd-85-profile/${id}`,
+      clone
+    );
+
+    //enviar o clone para a API. como PUT
+    //setReload(!reload)
+  }
+
   return (
     <div>
       {allquestions.map((element, index) => {
         return (
           <div key={element.pergunta}>
             <p>{element.pergunta}</p>
-            <span>Pouco</span>{" "}
+            <span>{element.min} </span>{" "}
             <input
               type="range"
               onChange={(e) => handleRange(e, index)}
@@ -85,13 +121,13 @@ function Quizz({ cuidado, setCuidado, luminosidade, setLuminosidade, id }) {
               step={1}
               defaultValue={1}
             />
-            <span>Muito</span>
+            <span> {element.max}</span>
           </div>
         );
       })}
       <button onClick={handleSubmitQuiz}>Finalizar quizz</button>
 
-      {resultQuizz.map((plant) => {
+      {resultQuizz.map((plant, index) => {
         return (
           <div key={plant.nomePopular}>
             <Card
@@ -100,8 +136,7 @@ function Quizz({ cuidado, setCuidado, luminosidade, setLuminosidade, id }) {
                 margin: "20px",
                 alignItems: "center",
                 border: "solid black 2px",
-              }}
-            >
+              }}>
               <Card.Img
                 variant="top"
                 src={plant.Imagens}
@@ -120,7 +155,9 @@ function Quizz({ cuidado, setCuidado, luminosidade, setLuminosidade, id }) {
                   </ListGroup.Item>
 
                   <ListGroup.Item>{plant.info.slice(0, 60)}</ListGroup.Item>
-                  <button>ENVIAR PARA O PERFIL DO USUÁRIO</button>
+                  <button onClick={(e) => handleAddGarden(e, plant)}>
+                    COLOCAR NO MEU JARDIM
+                  </button>
                 </ListGroup>
               </Card.Body>
             </Card>

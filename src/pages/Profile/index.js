@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import EditUser from "../../components/EditUser";
+import MyGarden from "../../components/MyGarden";
 
 import {
   Button,
@@ -87,9 +88,17 @@ function Profile() {
             <Accordion.Item eventKey="0">
               <Accordion.Header>Meu Jardim</Accordion.Header>
               <Accordion.Body>
-                {
-                  setUser.garden
-                }
+
+                <MyGarden
+                user={user}
+                id={id}
+                showForm={showForm}
+                setShowForm={setShowForm}
+                reload={reload}
+                setReload={setReload}
+
+                />
+
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1">
@@ -107,6 +116,9 @@ function Profile() {
                 setCuidado={setCuidado}
                 setLuminosidade={setLuminosidade}
                 id={id}
+                user={user}
+                reload={reload}
+                setReload={setReload}
                 />
               </Accordion.Body>
             </Accordion.Item>
