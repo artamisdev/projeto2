@@ -79,10 +79,10 @@ function AllPlants({ user, id }) {
             }}>
             {plantsFilter.map((plant) => {
               return (
-               <CardAllPlants 
+                <CardAllPlants
                   plant={plant}
                   handleAddGarden={handleAddGarden}
-               />
+                />
               );
             })}
           </div>
