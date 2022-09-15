@@ -83,7 +83,7 @@ function AllPlants() {
                       <ListGroup.Item> Origem: {plant.origem}</ListGroup.Item>
                       <ListGroup.Item> Cuidado: {plant.cuidado}</ListGroup.Item>
                       <ListGroup.Item>
-                        {" "}
+                      
                         Luminosidade: {plant.luminosidade}
                       </ListGroup.Item>
 
