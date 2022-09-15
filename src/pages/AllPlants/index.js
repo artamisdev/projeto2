@@ -89,10 +89,10 @@ function AllPlants(user, id, reload, setReload, showForm, setShowForm) {
                     src={plant.Imagens}
                     style={{ width: "17,5rem" }}
                   />
-                  <Card.Title>{plant.nomePopular}</Card.Title>
+                  <Card.Title>"{plant.nomePopular}"</Card.Title>
 
                   <Card.Body>
-                    <Card.Subtitle>{plant.nomeCientifico}</Card.Subtitle>
+                    <Card.Subtitle>"{plant.nomeCientifico}"</Card.Subtitle>
 
                     <ListGroup className="list-group-flush">
                       <ListGroup.Item> Origem: {plant.origem}</ListGroup.Item>
@@ -104,7 +104,7 @@ function AllPlants(user, id, reload, setReload, showForm, setShowForm) {
                       <ListGroup.Item>{plant.info.slice(0, 60)}</ListGroup.Item>
 
                       <button onClick={(e) => handleAddGarden(e, plant)}>
-                        COLOCAR NO MEU JARDIM
+                        Adicionar ao meu Jardim
                       </button>
 
                     </ListGroup>

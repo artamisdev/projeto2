@@ -25,7 +25,8 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
   }
 
   return (
-    <>
+    <div>
+      
       {!isLoading && (
         <div>
           {user.garden.map((plant, index) => {
@@ -59,18 +60,19 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
                 </Card.Body>
                 <Card.Footer>
                   <button onClick={(e) => handleDeletePlant(e, index)}>
-                    RETIRAR DO MEU JARDIM
+                    Retirar do meu Jardim
                   </button>
                 </Card.Footer>
               </Card>
             </div>
+           
           );
+
         })}
-      </div>
 
+        </div> 
+    </div>
+      ))
 
-    </>
-  );
-}
 
 export default MyGarden;
