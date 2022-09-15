@@ -61,7 +61,7 @@ function AllPlants({ user, id }) {
     <>
       {!isLoading && (
         <div>
-          <h1>ALLPlants</h1>
+          <h1>Todas as Plantas</h1>
 
           <Col className="col-10">
             <Form.Control
