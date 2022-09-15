@@ -88,7 +88,7 @@ function AllPlants() {
                       </ListGroup.Item>
 
                       <ListGroup.Item>{plant.info.slice(0, 60)}</ListGroup.Item>
-                      <button>ENVIAR PARA O PERFIL DO USUÁRIO</button>
+                      <button>Adicionar ao meu Jardim</button>
                     </ListGroup>
                   </Card.Body>
                 </Card>
