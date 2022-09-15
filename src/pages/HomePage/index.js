@@ -6,20 +6,16 @@ function HomePage() {
     <div className="homePageHero">
       <div className="homeBody">
         <p className="homeTxtInicio">
-          Lorem impsum dolor sit amet, consectetur adipiscing elit. Ut et massa
-          mi. Aliquam in hendrerit urna. Peilentesque sit amet sapien fringilla,
-          mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis
-          tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non
-          suscipit magna interdu eu. Curabitur pellentesque nibh nibh, at maximus
-          ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales.
+          Nosso projeto tem o intuito de te ajudar a encontrar a planta que mais
+          se encaixe com a sua casa e personalidade. Queremos te ajudar a fazer
+          o seu ambiente ficar ainda mais aconchegante e verde! Sinta se à
+          vontade por aqui!
         </p>
-
 
         <Link to="/create-profile">
           <button className="homeInicio">Crie seu perfil</button>
         </Link>
       </div>
-
     </div>
   );
 }
