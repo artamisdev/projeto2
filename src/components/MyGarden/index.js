@@ -71,7 +71,7 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
       </div>
       
       )}; 
-    </>
+    </div>
   )
 }
 
