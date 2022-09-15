@@ -1,18 +1,13 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import EditUser from "../../components/EditUser";
 import MyGarden from "../../components/MyGarden";
-import { useAccordionButton } from "react-bootstrap/AccordionButton";
+
 
 import {
   Button,
-  Modal,
-  Form,
   Accordion,
-  FloatingLabel,
-  Card,
 } from "react-bootstrap";
 import AllPlants from "../AllPlants";
 import Quizz from "../Quizz";
