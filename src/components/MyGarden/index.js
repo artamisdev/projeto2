@@ -58,7 +58,7 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
                   </ListGroup>
                 </Card.Body>
                 <Card.Footer>
-                  <button onClick={(e) => handleDeletePlant(e, index)}>
+                  <button className="retirarJar" onClick={(e) => handleDeletePlant(e, index)}>
                     Retirar do meu Jardim
                   </button>
                 </Card.Footer>

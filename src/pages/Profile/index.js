@@ -64,7 +64,7 @@ function Profile() {
 
   return (
     <div>
-      <div className="card d-flex flex-row shadow-md justify-content-between align-items-center">
+      <div className="barraSup">
         <span className="m-2 fs-2 fw-semibold">{user.nome}</span>
         <span>Moradia: {user.moradia}</span>
         <span>{user.idade} anos</span>

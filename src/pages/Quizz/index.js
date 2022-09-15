@@ -105,9 +105,9 @@ function Quizz({
     <div>
       {allquestions.map((element, index) => {
         return (
-          <div key={element.pergunta}>
-            <p>{element.pergunta}</p>
-            <span>{element.min} </span>{" "}
+          <div key={element.pergunta} style={{marginBottom: "30px"}}>
+            <p className="quizPergunta"><strong>{element.pergunta}</strong></p>
+            <span className="quizElemento">{element.min} </span>{" "}
             <input
               type="range"
               onChange={(e) => handleRange(e, index)}
@@ -116,11 +116,11 @@ function Quizz({
               step={1}
               defaultValue={1}
             />
-            <span> {element.max}</span>
+            <span className="quizElemento"> {element.max}</span>
           </div>
         );
       })}
-      <button onClick={handleSubmitQuiz}>Finalizar quizz</button>
+      <button className="finalizarQuiz" onClick={handleSubmitQuiz}>Finalizar quiz</button>
 
       {resultQuizz.map((plant, index) => {
         return (
