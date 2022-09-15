@@ -56,12 +56,11 @@ function Profile() {
     fetchUser();
   }, [id, reload]);
 
-  console.log(user);
-
   function handleAccordion() {
     console.log("dentro da funcao");
     setReload(!reload);
   }
+  console.log(user);
 
   return (
     <div>

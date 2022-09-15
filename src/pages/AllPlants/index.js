@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Form, Col, Card } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
+import CardAllPlants from "../../components/CardAllPlants";
 
-function AllPlants(user, id, reload, setReload, showForm, setShowForm) {
+function AllPlants({ user, id }) {
   const [allPlants, setAllPlants] = useState([{ nomePopular: "" }]);
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -12,6 +13,7 @@ function AllPlants(user, id, reload, setReload, showForm, setShowForm) {
   async function handleAddGarden(e, plant) {
     e.preventDefault();
     const clone = { ...user };
+    console.log(clone);
     clone.garden.push(plant); //planta adicionada na array de garden
     delete clone._id;
 
@@ -54,6 +56,7 @@ function AllPlants(user, id, reload, setReload, showForm, setShowForm) {
     setPlantsFilter(plantsFiltered);
   }
 
+  console.log(user);
   return (
     <>
       {!isLoading && (

@@ -3,8 +3,6 @@ import ListGroup from "react-bootstrap/ListGroup";
 import axios from "axios";
 
 function MyGarden({ user, id, reload, setReload, isLoading }) {
-  console.log(user);
-
   async function handleDeletePlant(e, index) {
     e.preventDefault();
 
@@ -20,6 +18,7 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
 
     setReload(!reload);
 
+    //fazer o SPLICE
 
     //.slice(0, 60)
   }
@@ -69,10 +68,11 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
           );
 
         })}
-
-        </div> 
-    </div>
-      ))
-
+      </div>
+      
+      )}; 
+    </>
+  )
+}
 
 export default MyGarden;
