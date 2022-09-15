@@ -66,7 +66,7 @@
 .homeTxtInicio {
   font-size: 14px;
   margin: 25px;
-  margin-top: 280px;
+  margin-top: 38vh;
   text-align: justify;
   font-family: "Lato", sans-serif;
   color: whitesmoke;
@@ -94,7 +94,7 @@
 
 .profilesPageMain {
   background-image: url("./assets/04\ -\ Perfis\ teste02.png");
-  background-size: cover;
+  background-size: 100vw;
 }
 
 .profilesSub {
@@ -130,4 +130,48 @@
 .h6 {
   font-size: 14px !important;
   color: #2B2B2B !important;
+}
+
+.createSubtitle {
+  font-family: Lato;
+  font-weight: 900;
+  text-align: left;
+  color: #7c6053;
+  width: 80px;
+  background-image: url('./assets/02\ -\ Criar\ Perfil.png');
+}
+
+.createImg {
+  width: 55vw;
+}
+
+.createFormBackground {
+  background-color: #D1B3AE;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.createForm {
+  font-family: Lato;
+  font-weight: 600;
+  color: #414141;
+  background-color: white;
+  margin: 25px;
+  border-radius: 12px;
+}
+
+Form {
+  width: 90vw;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#formBasicEmail {
+  width: 80vw;
 }
