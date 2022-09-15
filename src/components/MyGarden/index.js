@@ -20,10 +20,8 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
 
     setReload(!reload);
 
-    console.log(clone.garden[index]);
-    //fazer o SPLICE
 
-    //atualizar o USER com o clone
+    //.slice(0, 60)
   }
 
   return (
@@ -56,21 +54,21 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
                       <ListGroup.Item>
                         Luminosidade: {plant.luminosidade}
                       </ListGroup.Item>
+                    <ListGroup.Item>{plant.info}</ListGroup.Item> 
+                  </ListGroup>
+                </Card.Body>
+                <Card.Footer>
+                  <button onClick={(e) => handleDeletePlant(e, index)}>
+                    RETIRAR DO MEU JARDIM
+                  </button>
+                </Card.Footer>
+              </Card>
+            </div>
+          );
+        })}
+      </div>
 
-                      <ListGroup.Item>{plant.info.slice(0, 60)}</ListGroup.Item>
-                    </ListGroup>
-                  </Card.Body>
-                  <Card.Footer>
-                    <button onClick={(e) => handleDeletePlant(e, index)}>
-                      RETIRAR DO MEU JARDIM
-                    </button>
-                  </Card.Footer>
-                </Card>
-              </div>
-            );
-          })}
-        </div>
-      )}
+
     </>
   );
 }
