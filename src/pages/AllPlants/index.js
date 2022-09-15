@@ -3,11 +3,26 @@ import axios from "axios";
 import { Form, Col, Card } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 
-function AllPlants() {
+function AllPlants(user, id, reload, setReload, showForm, setShowForm) {
   const [allPlants, setAllPlants] = useState([{ nomePopular: "" }]);
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [plantsFilter, setPlantsFilter] = useState([{ nomePopular: "" }]);
+
+  async function handleAddGarden(e, plant) {
+    e.preventDefault();
+    const clone = { ...user };
+    clone.garden.push(plant); //planta adicionada na array de garden
+    delete clone._id;
+
+    await axios.put(
+      `https://ironrest.herokuapp.com/jungle-wd-85-profile/${id}`,
+      clone
+    );
+
+    //enviar o clone para a API. como PUT
+    //setReload(!reload)
+  }
 
   useEffect(() => {
     async function fetchPlants() {
@@ -31,10 +46,12 @@ function AllPlants() {
     setSearch(e.target.value);
 
     const plantsFiltered = allPlants.filter((plant) => {
-      return plant.nomePopular.toLowerCase().startsWith(e.target.value.toLowerCase());
+      return plant.nomePopular
+        .toLowerCase()
+        .startsWith(e.target.value.toLowerCase());
     });
 
-    setPlantsFilter(plantsFiltered)
+    setPlantsFilter(plantsFiltered);
   }
 
   return (
@@ -56,8 +73,7 @@ function AllPlants() {
               flexWrap: "wrap",
               flexDirection: "row",
               justifyContent: "space-evenly",
-            }}
-          >
+            }}>
             {plantsFilter.map((plant) => {
               return (
                 <Card
@@ -67,8 +83,7 @@ function AllPlants() {
                     margin: "20px",
                     alignItems: "center",
                     border: "solid black 2px",
-                  }}
-                >
+                  }}>
                   <Card.Img
                     variant="top"
                     src={plant.Imagens}
@@ -83,12 +98,15 @@ function AllPlants() {
                       <ListGroup.Item> Origem: {plant.origem}</ListGroup.Item>
                       <ListGroup.Item> Cuidado: {plant.cuidado}</ListGroup.Item>
                       <ListGroup.Item>
-                      
                         Luminosidade: {plant.luminosidade}
                       </ListGroup.Item>
 
                       <ListGroup.Item>{plant.info.slice(0, 60)}</ListGroup.Item>
-                      <button>Adicionar ao meu Jardim</button>
+
+                      <button onClick={(e) => handleAddGarden(e, plant)}>
+                        COLOCAR NO MEU JARDIM
+                      </button>
+
                     </ListGroup>
                   </Card.Body>
                 </Card>

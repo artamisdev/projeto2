@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import EditUser from "../../components/EditUser";
 import MyGarden from "../../components/MyGarden";
+import { useAccordionButton } from "react-bootstrap/AccordionButton";
 
 import {
   Button,
@@ -17,6 +18,8 @@ import AllPlants from "../AllPlants";
 import Quizz from "../Quizz";
 
 function Profile() {
+  //const decoratedOnClick = useAccordionButton(eventKey, onClick);
+
   const { id } = useParams();
 
   const [user, setUser] = useState({});
@@ -25,9 +28,8 @@ function Profile() {
   const [isLoading, setIsLoading] = useState(true);
 
   //states das perguntas
-  const [luminosidade,setLuminosidade] = useState(0)
-  const [cuidado, setCuidado] = useState(0)
-
+  const [luminosidade, setLuminosidade] = useState(0);
+  const [cuidado, setCuidado] = useState(0);
 
   const [form, setForm] = useState({
     nome: "",
@@ -56,6 +58,11 @@ function Profile() {
 
   console.log(user);
 
+  function handleAccordion() {
+    console.log("dentro da funcao");
+    setReload(!reload);
+  }
+
   return (
     <div>
       <div className="card d-flex flex-row shadow-md justify-content-between align-items-center">
@@ -82,49 +89,59 @@ function Profile() {
         />
       )}
 
-      {!isLoading && (
-        <div className="mt-3">
-          <Accordion>
-            <Accordion.Item eventKey="0">
-              <Accordion.Header>Meu Jardim</Accordion.Header>
-              <Accordion.Body>
-
-                <MyGarden
+      <div className="mt-3">
+        <Accordion>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header onClick={handleAccordion}>
+              Meu Jardim
+            </Accordion.Header>
+            <Accordion.Body>
+              <MyGarden
                 user={user}
                 id={id}
                 showForm={showForm}
                 setShowForm={setShowForm}
                 reload={reload}
                 setReload={setReload}
+                isLoading={isLoading}
+              />
+            </Accordion.Body>
+          </Accordion.Item>
 
-                />
-
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="1">
-              <Accordion.Header>Todas as Plantas</Accordion.Header>
-              <Accordion.Body>
-                <AllPlants />
-              </Accordion.Body>
-            </Accordion.Item>
-            <Accordion.Item eventKey="2">
-              <Accordion.Header>Quizz de Plantas</Accordion.Header>
-              <Accordion.Body>
-                <Quizz 
-                luminosidade={luminosidade}
-                cuidado={cuidado}
-                setCuidado={setCuidado}
-                setLuminosidade={setLuminosidade}
-                id={id}
-                user={user}
-                reload={reload}
-                setReload={setReload}
-                />
-              </Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
-        </div>
-      )}
+          {!isLoading && (
+            <>
+              <Accordion.Item eventKey="1">
+                <Accordion.Header>Todas as Plantas</Accordion.Header>
+                <Accordion.Body>
+                  <AllPlants
+                    id={id}
+                    user={user}
+                    reload={reload}
+                    setReload={setReload}
+                    showForm={showForm}
+                    setShowForm={setShowForm}
+                  />
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="2">
+                <Accordion.Header>Quizz de Plantas</Accordion.Header>
+                <Accordion.Body>
+                  <Quizz
+                    luminosidade={luminosidade}
+                    cuidado={cuidado}
+                    setCuidado={setCuidado}
+                    setLuminosidade={setLuminosidade}
+                    id={id}
+                    user={user}
+                    reload={reload}
+                    setReload={setReload}
+                  />
+                </Accordion.Body>
+              </Accordion.Item>
+            </>
+          )}
+        </Accordion>
+      </div>
     </div>
   );
 }
