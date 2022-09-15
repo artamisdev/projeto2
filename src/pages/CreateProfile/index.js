@@ -93,7 +93,7 @@ function CreateProfile() {
             variant="success"
             size="md"
             type="submit"
-            style={{ width: "100px" }}>
+            className="createSalvar">
             Salvar
           </Button>
         </div>

@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button, Form, Row, Col, Card } from "react-bootstrap";
+import imgPerfil from '../../assets/perfil.png'
 
 function Profiles() {
   const [user, setUser] = useState([]);
@@ -33,11 +34,13 @@ function Profiles() {
     <>
       <div className="profilesPageMain">
         <p className="profilesSub">Perfis</p>
+
         <Row
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            marginTop: "280px"
           }}
         >
           <Col
@@ -81,11 +84,12 @@ function Profiles() {
                   >
                     <Card.Img
                       variant="top"
-                      src="https://thumbor.cartpanda.com/4zmdTFchn7WoN3E5SkWqW481nwc=/600x0/https://assets.mycartpanda.com/static/products_images/dDGNEXKGrqaRiJ3n84bwzyW9CFIz0d.jpg"
+                      src={imgPerfil}
+                      style={{width:"180px", marginTop:"13px"}}
                     />
                     <Card.Body>
                       <p className="card-title profilesCardTitle">
-                      {user.nome}
+                      <strong>{user.nome}</strong>
                       </p>
 
                       <Card.Subtitle className="mb-2 text-muted">
