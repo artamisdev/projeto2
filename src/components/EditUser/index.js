@@ -47,7 +47,6 @@ function EditUser({
     }
   }
 
-  console.log(id);
 
   return (
     <Modal show={showForm} onHide={() => setShowForm(false)}>

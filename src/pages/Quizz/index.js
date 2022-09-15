@@ -63,8 +63,6 @@ function Quizz({
     allquestions[index].res = e.target.value;
   }
 
-  console.log(allquestions);
-
   async function handleSubmitQuiz() {
     // pegar os valores das res, fazer a média
 
@@ -76,12 +74,9 @@ function Quizz({
       (+allquestions[3].res + +allquestions[4].res + +allquestions[5].res) / 3
     );
 
-    console.log(avgCare, avgLum);
-
     const allPlants = await axios.get(
       `https://ironrest.herokuapp.com/jungle-wd-85`
     );
-    console.log(allPlants.data);
 
     const filteredArray = allPlants.data.filter((plant) => {
       console.log(plant.luminosidade <= avgLum);
