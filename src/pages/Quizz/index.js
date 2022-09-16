@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Card } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
+import plantasQuiz from '../../assets/03 - QuizPlantas.png'
 
 function Quizz({
 
@@ -101,6 +102,7 @@ function Quizz({
     <div>
       {allquestions.map((element, index) => {
         return (
+
           <div key={element.pergunta} style={{marginBottom: "30px"}}>
             <p className="quizPergunta"><strong>{element.pergunta}</strong></p>
             <span className="quizElemento">{element.min} </span>{" "}
