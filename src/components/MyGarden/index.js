@@ -30,20 +30,22 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
         <div>
           {user.garden.map((plant, index) => {
             return (
-              <div key={plant._id}>
+              <div key={plant._id} style={{display:"flex", flexDirection: "column",
+    alignItems: "center"}}>
                 <Card
                   style={{
-                    width: "18rem",
+                    width: "50vw",
                     margin: "20px",
+                    marginTop: "30px",
                     alignItems: "center",
-                    border: "solid black 2px",
+                    border: "#E7E7E7 1.5px",
                   }}>
                   <Card.Img
                     variant="top"
                     src={plant.Imagens}
                     style={{ width: "17,5rem" }}
                   />
-                  <Card.Title>{plant.nomePopular}</Card.Title>
+                  <Card.Title style={{marginTop:"10px", marginBottom:"0px"}}>{plant.nomePopular}</Card.Title>
 
                   <Card.Body>
                     <Card.Subtitle>{plant.nomeCientifico}</Card.Subtitle>
@@ -54,7 +56,7 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
                       <ListGroup.Item>
                         Luminosidade: {plant.luminosidade}
                       </ListGroup.Item>
-                    <ListGroup.Item>{plant.info}</ListGroup.Item> 
+                    <ListGroup.Item style={{textAlign: "justify"}}>{plant.info}</ListGroup.Item> 
                   </ListGroup>
                 </Card.Body>
                 <Card.Footer>
