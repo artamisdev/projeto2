@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Form, Col, Card } from "react-bootstrap";
-import ListGroup from "react-bootstrap/ListGroup";
+import { Form, Col} from "react-bootstrap";
+
 import CardAllPlants from "../../components/CardAllPlants";
 
 function AllPlants({ user, id }) {
@@ -61,15 +61,20 @@ function AllPlants({ user, id }) {
     <>
       {!isLoading && (
         <div>
-          <h1>ALLPlants</h1>
 
-          <Col className="col-10">
+          <div class="">
+          <h1>Todas as Plantas</h1>
+
+          <Col className="align-items-center" > 
             <Form.Control
+            style={{width:"80vw"}}
               value={search}
               onChange={handleSearch}
               placeholder="Encontre a sua planta"
             />
           </Col>
+
+          </div>
           <div
             style={{
               display: "flex",

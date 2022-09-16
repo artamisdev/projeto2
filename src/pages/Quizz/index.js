@@ -5,14 +5,10 @@ import { Card } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 
 function Quizz({
-  cuidado,
-  setCuidado,
-  luminosidade,
-  setLuminosidade,
+
   id,
   user,
-  reload,
-  setReload,
+  
 }) {
   const [resultQuizz, setResultQuizz] = useState([]);
 
@@ -115,6 +111,7 @@ function Quizz({
               max={5}
               step={1}
               defaultValue={1}
+              variant='dark'
             />
             <span className="quizElemento"> {element.max}</span>
           </div>

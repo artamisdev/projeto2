@@ -1,4 +1,4 @@
-import { Form, Col, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 import { useState } from "react";
 
@@ -38,7 +38,7 @@ function CardAllPlants({ plant, handleAddGarden }) {
             </ListGroup.Item>
           ) : (
             <ListGroup.Item>
-              {plant.info.slice(0, 60)}
+              {plant.info.slice(0, 70)}
               <button onClick={() => setShowDetail(!showDetail)}>
                 Leia mais...
               </button>

@@ -1,6 +1,5 @@
 // PAGINA COM TODOS OS PERFIS DOS USERS E O FORM PARA CADASTRO
-import NavBar from "../../components/NavBar";
-import Profile from "../Profile";
+
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -34,7 +33,8 @@ function Profiles() {
   return (
     <>
       <div className="profilesPageMain">
-        <p className="profilesSub">Perfis</p>
+        <p className="profilesSub">Outros jardineiros já estão por aqui, 
+        vamos espiar a grama do vizinho? :)</p>
 
         <Row
           style={{
@@ -59,7 +59,7 @@ function Profiles() {
               }}
               value={search}
               onChange={handleSearch}
-              placeholder="Procure um companheiro jardineiro"
+              placeholder="Procure um amigo jardineiro"
             />
           </Col>
           <Link to="/create-profile">
