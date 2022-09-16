@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import EditUser from "../../components/EditUser";
 import MyGarden from "../../components/MyGarden";
+import profile from '../../assets/05 - Imagem.png'
 
 
 import {
@@ -59,6 +60,13 @@ function Profile() {
 
   return (
     <div>
+    <div style={{display:"flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between"}}>
+    <h1 className="AllSub">Perfil</h1>
+    <img src={profile} alt="plantinha" className="profileImg"/>
+    </div>
       <div className="barraSup">
         <span className="userNome">{user.nome}</span>
         <span><strong>Moradia:</strong> {user.moradia} |</span>

@@ -239,9 +239,10 @@ Form {
   padding-right: 16px;
   border-radius: 8px;
   font-family: "Lato", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   color: white;
   background-color: #7C6053;
+  border-color: #7C6053;
 }
 
 .userNome {
@@ -249,4 +250,52 @@ Form {
   font-family: "Lato", sans-serif;
   font-weight: 600;
   margin-right: 12px;
+}
+
+.AllSub {
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+  color: #7c6053;
+  font-weight: 900;
+  text-align: left;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 40px;
+}
+
+.btnCardAll {
+  padding: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 8px;
+  background-color: #7C6053;
+  border-color: #7C6053;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  color: white;
+}
+
+.profileImg {
+  margin-top: 80px;
+  width: 76vw;
+  max-width: 560px;
+  background-size: cover;
+}
+
+.imgAllPlants {
+  margin-top: 80px;
+  width: 74vw;
+  max-width: 560px;
+  background-size: cover;
+}
+
+.SubAll {
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+  color: #7C6053;
+  font-weight: 900;
+  text-align: left;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 40px;
 }

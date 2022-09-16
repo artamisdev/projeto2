@@ -6,13 +6,17 @@ function CardAllPlants({ plant, handleAddGarden }) {
   const [showDetail, setShowDetail] = useState(false);
 
   return (
+
+
     <Card
       key={plant._id}
       style={{
-        width: "18rem",
+        width: "60vw",
         margin: "20px",
         alignItems: "center",
-        border: "solid black 2px",
+        borderColor: "#E7E7E7 1.2px",
+        padding: "12px",
+        borderRadius:"12px"
       }}>
       <Card.Img
         variant="top"
@@ -25,29 +29,29 @@ function CardAllPlants({ plant, handleAddGarden }) {
         <Card.Subtitle>{plant.nomeCientifico}</Card.Subtitle>
 
         <ListGroup className="list-group-flush">
-          <ListGroup.Item> Origem: {plant.origem}</ListGroup.Item>
-          <ListGroup.Item> Cuidado: {plant.cuidado}</ListGroup.Item>
-          <ListGroup.Item>Luminosidade: {plant.luminosidade}</ListGroup.Item>
+          <ListGroup.Item><strong>Origem:</strong>  {plant.origem}</ListGroup.Item>
+          <ListGroup.Item><strong>Cuidado:</strong> {plant.cuidado}</ListGroup.Item>
+          <ListGroup.Item><strong>Luminosidade:</strong> {plant.luminosidade}</ListGroup.Item>
 
           {showDetail ? (
             <ListGroup.Item>
               {plant.info}{" "}
-              <button onClick={() => setShowDetail(!showDetail)}>
-                Esconder...
+              <button className="btnCardAll" onClick={() => setShowDetail(!showDetail)}>
+                Esconder
               </button>
             </ListGroup.Item>
           ) : (
             <ListGroup.Item>
               {plant.info.slice(0, 70)}
-              <button onClick={() => setShowDetail(!showDetail)}>
-                Leia mais...
+              <button className="btnCardAll" onClick={() => setShowDetail(!showDetail)}>
+                Leia mais
               </button>
             </ListGroup.Item>
           )}
 
           {window.location.pathname !== "/allplants" && (
-            <button onClick={(e) => handleAddGarden(e, plant)}>
-              COLOCAR NO MEU JARDIM
+            <button className="btnCardAll" onClick={(e) => handleAddGarden(e, plant)}>
+              Adicionar no "meu Jardim"
             </button>
           )}
         </ListGroup>
