@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Form, Col} from "react-bootstrap";
-import imgAllPlants from '../../assets/06 - Plantas.png'
+import { Form, Col } from "react-bootstrap";
+import imgAllPlants from "../../assets/06 - Plantas.png";
 
 import CardAllPlants from "../../components/CardAllPlants";
 
@@ -62,28 +62,37 @@ function AllPlants({ user, id }) {
     <>
       {!isLoading && (
         <div>
-        <div>
-          <div class="" style={{display:"flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              flexDirection: "row", marginBottom:"30px"}}>
-          <h1 className="SubAll">Todas as Plantas</h1>
-          <img src={imgAllPlants} alt="planta" className="imgAllPlants"/>
-        </div>
+          <div>
+            <div
+              class=""
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flexDirection: "row",
+                marginBottom: "30px",
+              }}
+            >
+              <h1 className="SubAll">Todas as Plantas</h1>
+              <img src={imgAllPlants} alt="planta" className="imgAllPlants" />
+            </div>
 
-          <Col className="align-items-center" style={{
-            display:"flex", 
-            justifyContent: "center", 
-            marginTop: "20px", 
-            marginBottom: "16px"}} > 
+            <Col
+              className="align-items-center"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "20px",
+                marginBottom: "16px",
+              }}
+            >
               <Form.Control
-              style={{width:"90vw", height:"46px", borderRadius:"12px"}}
+                style={{ width: "90vw", height: "46px", borderRadius: "12px" }}
                 value={search}
                 onChange={handleSearch}
                 placeholder="Encontre a sua planta"
-            />
-          </Col>
-
+              />
+            </Col>
           </div>
 
           <div
@@ -92,8 +101,9 @@ function AllPlants({ user, id }) {
               flexWrap: "wrap",
               flexDirection: "row",
               justifyContent: "space-evenly",
-              backgroundColor: "#D1B3AE"
-            }}>
+              backgroundColor: "#D1B3AE",
+            }}
+          >
             {plantsFilter.map((plant) => {
               return (
                 <CardAllPlants
