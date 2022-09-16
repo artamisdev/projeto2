@@ -5,14 +5,10 @@ import { Card } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 
 function Quizz({
-  cuidado,
-  setCuidado,
-  luminosidade,
-  setLuminosidade,
+  
   id,
   user,
-  reload,
-  setReload,
+  
 }) {
   const [resultQuizz, setResultQuizz] = useState([]);
 

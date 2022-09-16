@@ -1,6 +1,5 @@
 // PAGINA COM TODOS OS PERFIS DOS USERS E O FORM PARA CADASTRO
-import NavBar from "../../components/NavBar";
-import Profile from "../Profile";
+
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";

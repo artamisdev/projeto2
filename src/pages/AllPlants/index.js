@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Form, Col, Card } from "react-bootstrap";
-import ListGroup from "react-bootstrap/ListGroup";
+import { Form, Col, } from "react-bootstrap";
 import CardAllPlants from "../../components/CardAllPlants";
 
 function AllPlants({ user, id }) {
