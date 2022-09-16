@@ -61,15 +61,20 @@ function AllPlants({ user, id }) {
     <>
       {!isLoading && (
         <div>
+
+          <div class="">
           <h1>Todas as Plantas</h1>
 
-          <Col className="col-10">
+          <Col className="align-items-center" > 
             <Form.Control
+            style={{width:"80vw"}}
               value={search}
               onChange={handleSearch}
               placeholder="Encontre a sua planta"
             />
           </Col>
+
+          </div>
           <div
             style={{
               display: "flex",

@@ -70,12 +70,15 @@ function EditUser({
 
           <Form.Label>Moradia</Form.Label>
           <Form.Select
+            required
             name="moradia"
             onChange={handleChange}
             defaultValue={form.moradia}>
+            <option value=""></option>
             <option value="Apartamento">Apartamento</option>
             <option value="Casa">Casa</option>
             <option value="Sítio">Sítio</option>
+            <option value="Escritório">Escritório</option>
           </Form.Select>
         </Form>
       </Modal.Body>
