@@ -111,6 +111,7 @@ function Quizz({
               max={5}
               step={1}
               defaultValue={1}
+              variant='dark'
             />
             <span className="quizElemento"> {element.max}</span>
           </div>

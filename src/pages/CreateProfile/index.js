@@ -76,13 +76,16 @@ function CreateProfile() {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label className="fs-4 text-muted">Moradia</Form.Label>
           <Form.Select
+            required
             className="fs-5 text-muted"
             name="moradia"
             onChange={handleChange}
             defaultValue={form.moradia}>
+            <option value=""></option>
             <option value="Apartamento">Apartamento</option>
             <option value="Casa">Casa</option>
-            <option value="Sítio">Escritório</option>
+            <option value="Sítio">Sítio</option>
+            <option value="Escritório">Escritório</option>
           </Form.Select>
         </Form.Group>
 
