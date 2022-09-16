@@ -3,14 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Card } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
-import plantasQuiz from '../../assets/03 - QuizPlantas.png'
 
-function Quizz({
-
-  id,
-  user,
-  
-}) {
+function Quizz({ id, user }) {
   const [resultQuizz, setResultQuizz] = useState([]);
 
   const allquestions = [
@@ -102,9 +96,10 @@ function Quizz({
     <div>
       {allquestions.map((element, index) => {
         return (
-
-          <div key={element.pergunta} style={{marginBottom: "30px"}}>
-            <p className="quizPergunta"><strong>{element.pergunta}</strong></p>
+          <div key={element.pergunta} style={{ marginBottom: "30px" }}>
+            <p className="quizPergunta">
+              <strong>{element.pergunta}</strong>
+            </p>
             <span className="quizElemento">{element.min} </span>{" "}
             <input
               type="range"
@@ -113,13 +108,15 @@ function Quizz({
               max={5}
               step={1}
               defaultValue={1}
-              variant='dark'
+              variant="dark"
             />
             <span className="quizElemento"> {element.max}</span>
           </div>
         );
       })}
-      <button className="finalizarQuiz" onClick={handleSubmitQuiz}>Finalizar quiz</button>
+      <button className="finalizarQuiz" onClick={handleSubmitQuiz}>
+        Finalizar quiz
+      </button>
 
       {resultQuizz.map((plant, index) => {
         return (
@@ -130,7 +127,8 @@ function Quizz({
                 margin: "20px",
                 alignItems: "center",
                 border: "solid black 2px",
-              }}>
+              }}
+            >
               <Card.Img
                 variant="top"
                 src={plant.Imagens}
