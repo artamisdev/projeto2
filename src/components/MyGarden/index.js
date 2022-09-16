@@ -34,11 +34,11 @@ function MyGarden({ user, id, reload, setReload, isLoading }) {
     alignItems: "center"}}>
                 <Card
                   style={{
-                    width: "50vw",
+                    width: "55vw",
                     margin: "20px",
                     marginTop: "30px",
                     alignItems: "center",
-                    border: "#E7E7E7 1.5px",
+                    borderColor: "#E7E7E7 1.5px",
                   }}>
                   <Card.Img
                     variant="top"

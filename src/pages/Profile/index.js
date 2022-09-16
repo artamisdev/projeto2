@@ -60,13 +60,13 @@ function Profile() {
   return (
     <div>
       <div className="barraSup">
-        <span className="m-2 fs-2 fw-semibold">{user.nome}</span>
-        <span>Moradia: {user.moradia}</span>
-        <span>{user.idade} anos</span>
+        <span className="userNome">{user.nome}</span>
+        <span><strong>Moradia:</strong> {user.moradia} |</span>
+        <span style={{marginRight:"12px"}}>{user.idade} anos</span>
 
         <Button
           onClick={() => setShowForm(!showForm)}
-          className="btn btn-light btn-outline-dark btn-sm me-2">
+          className="btn btn-light btn-outline-dark btn-sm me-2" style={{backgroundColor:"#7C6053", color:"white", borderColor:"#7C6053"}}>
           Editar Perfil
         </Button>
       </div>
