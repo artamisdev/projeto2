@@ -23,7 +23,8 @@ function AboutUs() {
           src={criadores}
           alt="criadores"
           style={{
-            width: "140vw",
+            width: "70vw",
+            backgroundSize: "cover"
           }}
         />
       </div>

@@ -57,16 +57,16 @@
   padding-right: 10px;
   border-radius: 12px;
   border-color: #7c6053;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Lato", sans-serif;
   font-weight: 600;
   width: 30vw;
 }
 
 .homeTxtInicio {
-  font-size: 14px;
+  font-size: 16px;
   margin: 25px;
-  margin-top: 38vh;
+  margin-top: 40vh;
   text-align: justify;
   font-family: "Lato", sans-serif;
   color: whitesmoke;
@@ -314,6 +314,7 @@ Form {
   margin: 25px;
   margin-bottom: 60px;
   margin-top: 40px;
+  margin-right: 0px;
 }
 
 .nomeAbout {
