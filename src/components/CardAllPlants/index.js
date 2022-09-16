@@ -50,8 +50,10 @@ function CardAllPlants({ plant, handleAddGarden }) {
           )}
 
           {window.location.pathname !== "/allplants" && (
+
             <button className="btnCardAll" onClick={(e) => handleAddGarden(e, plant)}>
               Adicionar no "meu Jardim"
+
             </button>
           )}
         </ListGroup>
