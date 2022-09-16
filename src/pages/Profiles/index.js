@@ -33,7 +33,8 @@ function Profiles() {
   return (
     <>
       <div className="profilesPageMain">
-        <p className="profilesSub">Perfis</p>
+        <p className="profilesSub">Outros jardineiros já estão por aqui, 
+        vamos espiar a grama do vizinho? :)</p>
 
         <Row
           style={{
@@ -58,7 +59,7 @@ function Profiles() {
               }}
               value={search}
               onChange={handleSearch}
-              placeholder="Procure um companheiro jardineiro"
+              placeholder="Procure um amigo jardineiro"
             />
           </Col>
           <Link to="/create-profile">

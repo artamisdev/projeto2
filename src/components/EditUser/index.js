@@ -68,7 +68,7 @@ function EditUser({
           {/*   <Form.Label>Signo</Form.Label>
           <Form.Control name="moradia" value={form.moradia} onChange={handleChange} /> */}
 
-          <Form.Label>Moradia</Form.Label>
+          <Form.Label>Ambiente</Form.Label>
           <Form.Select
             name="moradia"
             onChange={handleChange}
