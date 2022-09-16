@@ -54,22 +54,25 @@ function EditUser({
         <Modal.Title>Edite seu Perfil</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form>
-          <Form.Label>Nome</Form.Label>
-          <Form.Control name="nome" value={form.nome} onChange={handleChange} />
+        <Form style={{height:"230px"}}>
+          <Form.Label><strong>Nome</strong></Form.Label>
+          <Form.Control name="nome" value={form.nome} onChange={handleChange} 
+          style={{
+            marginBottom:"20px"}}/>
 
-          <Form.Label>Idade</Form.Label>
+          <Form.Label><strong>Idade</strong></Form.Label>
           <Form.Control
             name="idade"
             value={form.idade}
             onChange={handleChange}
+            style={{marginBottom:"20px"}}
           />
 
           {/*   <Form.Label>Signo</Form.Label>
           <Form.Control name="moradia" value={form.moradia} onChange={handleChange} /> */}
 
-          <Form.Label>Ambiente</Form.Label>
-          <Form.Select
+          <Form.Label><strong>Ambiente</strong></Form.Label>
+          <Form.Select style={{marginBottom:"20px"}}
             required
             name="moradia"
             onChange={handleChange}
