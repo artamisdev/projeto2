@@ -1,7 +1,14 @@
+
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+import createImage from '../../assets/02 - Criar Perfil.png'
+import toast, {Toaster} from "react-hot-toast"
+
+
+const notify = () => toast.success('Perfil salvo.');
+
 
 function CreateProfile() {
   const [form, setForm] = useState({
@@ -33,8 +40,18 @@ function CreateProfile() {
 
   return (
     <div className="d-flex flex-column">
-      <h4 className="text-center">Crie seu perfil no nosso site</h4>
+    <div style={{display:"flex",
+      marginLeft:"25px",
+      marginRight:"25px",
+      alignItems: "center",
+    justifyContent: "space-between",
+    }}>
+      <h4 className="createSubtitle">Crie seu perfil</h4>
+      <img className="createImg" src={createImage} alt="imagem"/>
+    </div>
 
+    <div className="createFormBackground">
+    <div className="createForm">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label className="text-start text-muted fs-4 ">Nome</Form.Label>
@@ -65,20 +82,24 @@ function CreateProfile() {
             defaultValue={form.moradia}>
             <option value="Apartamento">Apartamento</option>
             <option value="Casa">Casa</option>
-            <option value="Sítio">Sítio</option>
+            <option value="Sítio">Escritório</option>
           </Form.Select>
         </Form.Group>
 
         <div className="d-flex justify-content-center">
+        <Toaster />
           <Button
+            onClick={notify}
             variant="success"
             size="md"
             type="submit"
-            style={{ width: "100px" }}>
+            className="createSalvar">
             Salvar
           </Button>
         </div>
       </Form>
+    </div>
+    </div>
     </div>
   );
 }

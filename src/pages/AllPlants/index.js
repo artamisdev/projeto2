@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Form, Col, } from "react-bootstrap";
+import { Form, Col} from "react-bootstrap";
+
 import CardAllPlants from "../../components/CardAllPlants";
 
 function AllPlants({ user, id }) {

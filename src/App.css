@@ -66,7 +66,7 @@
 .homeTxtInicio {
   font-size: 14px;
   margin: 25px;
-  margin-top: 280px;
+  margin-top: 38vh;
   text-align: justify;
   font-family: "Lato", sans-serif;
   color: whitesmoke;
@@ -130,4 +130,103 @@
 .h6 {
   font-size: 14px !important;
   color: #2B2B2B !important;
+}
+
+.createSubtitle {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  text-align: left;
+  color: #7c6053;
+  width: 80px;
+  background-image: url('./assets/02\ -\ Criar\ Perfil.png');
+}
+
+.createImg {
+  width: 55vw;
+}
+
+.createFormBackground {
+  background-color: #D1B3AE;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.createForm {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  color: #414141;
+  background-color: white;
+  margin: 25px;
+  border-radius: 12px;
+}
+
+Form {
+  width: 90vw;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#formBasicEmail {
+  width: 80vw;
+}
+
+.quizPergunta {
+  font-family: "Lato", sans-serif;
+  margin: 25px;
+}
+
+.quizElemento {
+  font-family: "Lato", sans-serif;
+  margin: 8px;
+}
+
+.finalizarQuiz {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  background-color: #7C6053;
+  border-radius: 8px;
+  padding: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.createSalvar {
+  width: 100px;
+  margin-top: 10px;
+  background-color: #7C6053 !important;
+  font-family: "Lato", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+
+}
+
+.barraSup {
+  margin: 20px;
+  display: flex;
+  background-color: white;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Lato", sans-serif;
+  border-radius: 10px;
+}
+
+.retirarJar {
+  margin-top: 16px;
+  padding: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 8px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  color: white;
+  background-color: #7C6053;
 }

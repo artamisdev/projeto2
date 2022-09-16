@@ -8,13 +8,16 @@ import HomePage from "./pages/HomePage";
 import Profile from "./pages/Profile";
 import CreateProfile from "./pages/CreateProfile";
 import NavBar from "./components/NavBar";
-
+import {Toaster} from "react-hot-toast"
 
 
 
 function App() {
   return (
     <div className="App">
+    <div>
+       <Toaster />
+    </div>
       <NavBar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
