@@ -118,7 +118,7 @@ function Profile() {
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="2">
-                <Accordion.Header>Quizz de Plantas</Accordion.Header>
+                <Accordion.Header>Quiz de Plantas</Accordion.Header>
                 <Accordion.Body>
                   <Quizz
                     luminosidade={luminosidade}

@@ -48,7 +48,7 @@ function Profiles() {
             className="col-10"
             style={{
               width: "90%",
-              marginTop: "230px",
+              marginTop: "20px",
             }}
           >
             <Form.Control
@@ -105,7 +105,7 @@ function Profiles() {
                     <Card.Footer className="bg-white">
 
                       <Link to={`/user-profile/${user._id}`}>
-                        <Button variant="dark">Perfil Completo</Button>
+                        <Button style={{backgroundColor: "#7C6053", borderColor: "#7C6053", fontSize:"14px"}} variant="dark">Perfil Completo</Button>
                       </Link>
 
                     </Card.Footer>
