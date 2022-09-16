@@ -7,8 +7,8 @@ function HomePage() {
       <div className="homeBody">
         <p className="homeTxtInicio">
           Nosso projeto tem o intuito de te ajudar a encontrar a planta que mais
-          se encaixe com a sua casa e personalidade. Queremos te ajudar a fazer
-          o seu ambiente ficar ainda mais aconchegante e verde! Sinta se à
+          se encaixa com a sua casa e personalidade. Queremos te ajudar a fazer
+          o seu ambiente ficar ainda mais aconchegante e verde! Sinta-se à
           vontade por aqui!
         </p>
 
